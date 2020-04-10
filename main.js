@@ -1,81 +1,33 @@
 var eightball = document.querySelector("#eight-ball");
 var eight = document.querySelector("#eight");
 
-var randomNumber = Math.floor(Math.random() * 8);
+var answerList = [
+  "It is certain",
+  "It is decidedly so",
+  "Reply hazy try again",
+  "Cannot predict now",
+  "Do not count on it",
+  "My sources say no",
+  "Outlook not so good",
+  "Signs point to yes",
+  "Ask again later",
+  "Most likely",
+  "Very doubtful",
+  "Without a doubt",
+  "Yes",
+  "Yes - Definitely",
+  "You may rely on it",
+  "My sources say no"
+];
 
 var answer = "";
 
+var randomNumber = Math.floor(Math.random() * answerList.length);
+
 //record answer
 function getAnswer() {
-  randomNumber = Math.floor(Math.random() * 16);
-
-  switch (randomNumber) {
-    case 0:
-      answer = "It is certain";
-
-      break;
-
-    case 1:
-      answer = "It is decidedly so";
-
-      break;
-
-    case 3:
-      answer = "Reply hazy try again";
-
-      break;
-
-    case 4:
-      answer = "Cannot predict now";
-
-      break;
-
-    case 5:
-      answer = "Do not count on it";
-
-      break;
-
-    case 6:
-      answer = "My sources say no";
-
-      break;
-
-    case 7:
-      answer = "Outlook not so good";
-
-      break;
-
-    case 8:
-      answer = "Signs point to yes";
-
-      break;
-
-    case 9:
-      answer = "Ask again later";
-
-    case 10:
-      answer = "Most likely";
-
-    case 11:
-      answer = "Very doubtful";
-
-    case 12:
-      answer = "Without a doubt";
-
-    case 13:
-      answer = "Yes";
-
-    case 14:
-      answer = "Yes - Definitely";
-
-    case 15:
-      answer = "You may rely on it";
-
-    case 16:
-      answer = "My sources say no";
-
-    //display answer
-  }
+  randomNumber = Math.floor(Math.random() * answerList.length);
+  answer = answerList[randomNumber];
 }
 // This shakes the ball on click
 eightball.addEventListener("click", function() {
